@@ -9,4 +9,7 @@ define [
     title: 'Chaplin example application'
     start: ->
       console.log 'Application start method was called'
-      super
+
+      VK.init =>
+        console.log 'VK application was inited'
+        super

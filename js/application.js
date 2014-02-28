@@ -16,7 +16,12 @@
 
       Application.prototype.start = function() {
         console.log('Application start method was called');
-        return Application.__super__.start.apply(this, arguments);
+        return VK.init((function(_this) {
+          return function() {
+            console.log('VK application was inited');
+            return Application.__super__.start.apply(_this, arguments);
+          };
+        })(this));
       };
 
       return Application;

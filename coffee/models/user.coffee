@@ -4,6 +4,7 @@ define [
   'use strict'
 
   class User extends Chaplin.Model
+    url: '/api/user'
     defaults:
       first_name: 'FirstName'
       avatar_photo:
@@ -18,7 +19,7 @@ define [
         has_medium: no
         has_preview: no
         likes: []
-      id: 0
+      id: no
       profile_url: ''
 
     # initialize: (attributes, options) ->

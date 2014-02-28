@@ -12,6 +12,8 @@
         return User.__super__.constructor.apply(this, arguments);
       }
 
+      User.prototype.url = '/api/user';
+
       User.prototype.defaults = {
         first_name: 'FirstName',
         avatar_photo: {
@@ -27,7 +29,7 @@
           has_preview: false,
           likes: []
         },
-        id: 0,
+        id: false,
         profile_url: ''
       };
 

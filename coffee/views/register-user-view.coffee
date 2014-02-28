@@ -25,9 +25,13 @@ define [
 
       $("#registerUserSubmitButton").val 'Подождите...'
 
-      user = new UserModel()
-#        user_profile:
+      user = new UserModel
+        profile_url: url.replace("http://",'').replace('www.petonik.com/','').replace('petonik.com/','').split('/')[0]
 
-      console.log 'url is', url
+      console.log 'user is', user
+
+      user.save
+        success: (data)=>
+          console.log 'success', data
 
       no

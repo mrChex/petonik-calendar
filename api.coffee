@@ -25,4 +25,4 @@ exports.get_user = (user_id, callback)-> request "/#{user_id}/", callback
 exports.get_user_pets = (user_id, callback)-> request "/#{user_id}/pets/", callback
 exports.get_user_pet = (user_id, pet_id, callback)-> request "/#{user_id}/pet/#{pet_id}", callback
 
-exports.get_user 'chex', (u)-> console.log 'u is', u
+#exports.get_user 'chex', (u)-> console.log 'u is', u

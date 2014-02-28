@@ -29,8 +29,17 @@
         url = $("#petonikUrl").val();
         $("#petonikUrl").prop('disabled', true);
         $("#registerUserSubmitButton").val('Подождите...');
-        user = new UserModel();
-        console.log('url is', url);
+        user = new UserModel({
+          profile_url: url.replace("http://", '').replace('www.petonik.com/', '').replace('petonik.com/', '').split('/')[0]
+        });
+        console.log('user is', user);
+        user.save({
+          success: (function(_this) {
+            return function(data) {
+              return console.log('success', data);
+            };
+          })(this)
+        });
         return false;
       };
 
